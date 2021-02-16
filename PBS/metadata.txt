@@ -5,11 +5,11 @@ PlayerA = POKEMONTRAINER_Red,trchar000,boy_bike,boy_surf,boy_run,boy_surf,boy_fi
 PlayerB = POKEMONTRAINER_Leaf,trchar001,girl_bike,girl_surf,girl_run,girl_surf,girl_fish_offset,girl_fish_offset
 TrainerVictoryME = Battle victory trainer.ogg
 WildVictoryME = Battle victory wild.ogg
-TrainerBattleBGM = Battle trainer.mid
+TrainerBattleBGM = HGSS-118-BattleTrainer.ogg
 SurfBGM = Surfing.mid
 BicycleBGM = Bicycle.mid
 Home = 4,1,6,8
-WildBattleBGM = Battle wild.mid
+WildBattleBGM = HGSS-110-BattleWild.ogg
 #-------------------------------
 [001]
 # Intro
@@ -585,6 +585,12 @@ Outdoor = true
 SnapEdges = true
 Weather = Overcast,100
 MapPosition = 0,11,14
+#-------------------------------
+[103]
+# Weather Institute
+SnapEdges = true
+MapPosition = 0,12,17
+Outdoor = false
 #-------------------------------
 [104]
 # Route 3
@@ -1438,4 +1444,22 @@ Outdoor = false
 # House 2
 SnapEdges = true
 MapPosition = 0,19,9
+Outdoor = false
+#-------------------------------
+[250]
+# Mansion
+SnapEdges = true
+MapPosition = 0,22,9
+Outdoor = false
+#-------------------------------
+[251]
+# Mansion Basement
+SnapEdges = true
+MapPosition = 0,22,9
+Outdoor = false
+#-------------------------------
+[252]
+# Castronis Gym
+SnapEdges = true
+MapPosition = 0,28,8
 Outdoor = false
