@@ -1656,8 +1656,9 @@ BattleHandlers::TargetAbilityOnHit.add(:MUMMY,
        :BATTLEBOND,
        :DISGUISE,
 #       :FLOWERGIFT,                                      # This can be replaced
-#       :FORECAST,                                        # This can be replaced
+       :FORECAST,                                        # This can be replaced
        :MULTITYPE,
+       :ACCLIMATE,
        :POWERCONSTRUCT,
        :SCHOOLING,
        :SHIELDSDOWN,
@@ -2603,7 +2604,7 @@ BattleHandlers::AbilityOnSwitchIn.add(:DUAT,
     timeType = getConst(PBTypes,:TIME)
     battler.effects[PBEffects::Type3] = timeType
     battle.pbShowAbilitySplash(battler)
-    @battle.pbDisplay(_INTL("{1} is shrouded in the {2} !",target.pbThis,abilityName.pbThis))
+    battle.pbDisplay(_INTL("{1} is shrouded in the Duat !",battler.pbThis))
     battle.pbHideAbilitySplash(battler)
   }
 )
@@ -3083,6 +3084,7 @@ BattleHandlers::AbilityChangeOnBattlerFainting.add(:POWEROFALCHEMY,
        :DISGUISE,
        :FLOWERGIFT,
        :FORECAST,
+       :ACCLIMATE,
        :MULTITYPE,
        :POWERCONSTRUCT,
        :SCHOOLING,

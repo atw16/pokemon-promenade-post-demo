@@ -119,7 +119,7 @@ ShowArea = true
 [022]
 # Azgi Ruins
 SnapEdges = true
-BattleBack =
+BattleBack = 
 Weather = Sandstorm,100
 MapPosition = 0,21,17
 Outdoor = true
@@ -1287,7 +1287,7 @@ ShowArea = true
 # Rex Valley
 SnapEdges = true
 Weather = Overcast,100
-MapPosition = 0,22,12
+MapPosition = 0,24,11
 Outdoor = true
 ShowArea = true
 #-------------------------------
@@ -1295,8 +1295,15 @@ ShowArea = true
 # Rex Valley
 SnapEdges = true
 Weather = Eclipse,100
-MapPosition = 0,22,12
+MapPosition = 0,24,11
 Outdoor = true
+ShowArea = true
+#-------------------------------
+[205]
+# Temple of Apophicary
+SnapEdges = true
+Weather = TimeWarp,100
+MapPosition = 0,24,11
 ShowArea = true
 #-------------------------------
 [206]
@@ -1474,3 +1481,8 @@ Outdoor = false
 SnapEdges = true
 MapPosition = 0,24,5
 Outdoor = false
+#-------------------------------
+[254]
+# New Icaro Gym
+SnapEdges = true
+MapPosition = 0,3,16
