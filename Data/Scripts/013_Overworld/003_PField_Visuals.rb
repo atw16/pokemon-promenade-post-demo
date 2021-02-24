@@ -1,16 +1,18 @@
 #===============================================================================
-# Location signpost
+# Location signpost MOD V 1.0 By Qu4ntumSh3rd. Free to use with credit.
 #===============================================================================
 class LocationWindow
   def initialize(name)
     @window = Window_AdvancedTextPokemon.new(name)
     @window.resizeToFit(name,Graphics.width)
-    @window.x        = 0
-    @window.y        = -@window.height
+    @window.x        = -100
+    @window.y        = 155
+    @window.z        = 99999
     @window.viewport = Viewport.new(0,0,Graphics.width,Graphics.height)
-    @window.viewport.z = 99999
+    @window.viewport.z = 600
     @currentmap = $game_map.map_id
     @frames = 0
+    pbSEPlay("SE_Zoom2")
   end
 
   def disposed?
@@ -28,11 +30,11 @@ class LocationWindow
       @window.dispose
       return
     end
-    if @frames>80
-      @window.y -= 4
-      @window.dispose if @window.y+@window.height<0
+    if @frames>60
+      @window.x += 15
+      @window.dispose if @window.x+@window.width<0
     else
-      @window.y += 4 if @window.y<0
+      @window.x += 15 if @window.x<50
       @frames += 1
     end
   end
@@ -647,6 +649,7 @@ def pbStartOver(gameover=false)
     pbRemoveDependencies
     $game_switches[STARTING_OVER_SWITCH] = true
     $game_switches[73] = false
+    $game_switches[80] = false
     $game_switches[125] = false
     $game_temp.player_new_map_id    = $PokemonGlobal.pokecenterMapId
     $game_temp.player_new_x         = $PokemonGlobal.pokecenterX
@@ -673,6 +676,10 @@ def pbStartOver(gameover=false)
       pbRemoveDependencies
       $game_switches[STARTING_OVER_SWITCH] = true
       $game_switches[73] = false
+      for i in 76..80
+        $game_switches[i] = false
+      end
+      $game_variables[95] = 0
       $game_temp.player_new_map_id    = homedata[0]
       $game_temp.player_new_x         = homedata[1]
       $game_temp.player_new_y         = homedata[2]

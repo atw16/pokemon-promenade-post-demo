@@ -1128,6 +1128,7 @@ ShowArea = true
 [181]
 # Route 28
 SnapEdges = true
+DiveMap = 263
 Weather = Storm,0
 MapPosition = 0,16,7
 Outdoor = true
@@ -1489,7 +1490,7 @@ SnapEdges = true
 MapPosition = 0,3,16
 #-------------------------------
 [255]
-# Victory Road
+# Victory Road - Reverb Cave
 SnapEdges = true
 Weather = Reverb,100
 MapPosition = 0,14,7
@@ -1517,9 +1518,9 @@ MapPosition = 0,7,11
 ShowArea = true
 #-------------------------------
 [259]
-# Victory Road
+# Victory Road - Wind Path
 SnapEdges = true
-Weather = Windy,100
+Weather = None,0
 MapPosition = 0,14,7
 Outdoor = true
 ShowArea = true
@@ -1528,7 +1529,7 @@ ShowArea = true
 # Victory Road
 SnapEdges = true
 DiveMap = 261
-Weather = Windy,100
+Weather = None,0
 MapPosition = 0,13,7
 Outdoor = true
 ShowArea = true
@@ -1537,4 +1538,130 @@ ShowArea = true
 # Underwater
 SnapEdges = true
 MapPosition = 0,13,7
+ShowArea = true
+#-------------------------------
+[262]
+# Underwater
+SnapEdges = true
+MapPosition = 0,15,7
+ShowArea = true
+#-------------------------------
+[263]
+# Underwater
+SnapEdges = true
+MapPosition = 0,16,7
+ShowArea = true
+#-------------------------------
+[264]
+# Victory Road - Cosmic Cliffs
+SnapEdges = true
+Weather = None,0
+MapPosition = 0,13,8
+Outdoor = true
+ShowArea = true
+#-------------------------------
+[265]
+# Victory Road - Time Warp Tunnel
+SnapEdges = true
+Weather = None,0
+MapPosition = 0,13,4
+Outdoor = false
+ShowArea = true
+#-------------------------------
+[266]
+# Victory Road - Sleet Mountain
+SnapEdges = true
+Weather = None,0
+MapPosition = 0,13,3
+Outdoor = true
+ShowArea = true
+#-------------------------------
+[267]
+# Victory Road - Haunted Hills
+SnapEdges = true
+Weather = None,0
+MapPosition = 0,13,1
+Outdoor = true
+ShowArea = true
+#-------------------------------
+[268]
+# Victory Road - Borealis Beach
+SnapEdges = true
+Weather = None,0
+MapPosition = 0,10,2
+Outdoor = true
+ShowArea = true
+#-------------------------------
+[269]
+# Ecter Island
+SnapEdges = true
+Weather = None,0
+MapPosition = 0,7,2
+Outdoor = true
+ShowArea = true
+#-------------------------------
+[270]
+# Pokémon League - Gate
+SnapEdges = true
+MapPosition = 0,7,2
+ShowArea = true
+#-------------------------------
+[271]
+# Pokémon League - Challenge Islands
+SnapEdges = true
+Weather = StrongWinds,100
+MapPosition = 0,7,4
+Outdoor = false
+ShowArea = true
+#-------------------------------
+[272]
+# Psychic Room
+SnapEdges = true
+MapPosition = 0,2,4
+ShowArea = true
+#-------------------------------
+[273]
+# Sound Room
+SnapEdges = true
+MapPosition = 0,5,6
+ShowArea = true
+#-------------------------------
+[274]
+# Cosmic Room
+SnapEdges = true
+MapPosition = 0,8,6
+ShowArea = true
+#-------------------------------
+[275]
+# Time Room
+SnapEdges = true
+MapPosition = 0,11,4
+ShowArea = true
+#-------------------------------
+[276]
+# Champion Tower
+SnapEdges = true
+MapPosition = 0,7,4
+ShowArea = true
+#-------------------------------
+[277]
+# Hall of Fame
+SnapEdges = true
+#-------------------------------
+[278]
+# Quantum Cavern
+SnapEdges = true
+MapPosition = 0,16,7
+ShowArea = true
+#-------------------------------
+[279]
+# Cave of Wonder
+SnapEdges = true
+MapPosition = 0,26,17
+ShowArea = true
+#-------------------------------
+[280]
+# Cave of Wonder
+SnapEdges = true
+MapPosition = 0,27,17
 ShowArea = true
