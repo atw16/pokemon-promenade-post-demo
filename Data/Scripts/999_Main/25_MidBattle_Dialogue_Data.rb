@@ -399,10 +399,11 @@ module DialogueModule
                     battle.scene.pbShowOpponent(0)
                     pbMessage("Don't think this is over just yet, \\PN!")
                     battle.field.weather = PBWeather::Windy
-                    battle.field.weatherDuration = 5
+                    battle.field.weatherDuration = 8
+                    pbMessage("The wind picked back up!")
+                    removeAllHazards(nil)
                     battle.scene.pbHideOpponent
                     pbWait(16)
-                    pbMessage("The wind picked back up!")
                     battle.scene.disappearBar
                   }
 
@@ -411,15 +412,88 @@ module DialogueModule
                     battle.scene.pbShowOpponent(0)
                     pbMessage("Hoho! Just see what trickery we have for you!")
                     battle.field.weather = PBWeather::Eclipse
-                    battle.field.weatherDuration = 5
+                    battle.field.weatherDuration = 8
+                    pbMessage("The darkness returned!")
+                    pbWait(8)
                     battle.pbAnimation(getID(PBMoves,:TOXICSPIKES),battle.battlers[1],battle.battlers[0])
                     battle.battlers[0].status = PBStatuses::POISON
                     battle.battlers[0].effects[PBEffects::Toxic]
+                    poisonAllPokemon(nil)
+                    pbMessage("Seth's underhanded tactics badly poisoned \\PN's party!")
                     battle.scene.pbHideOpponent
                     pbWait(16)
-                    pbMessage("The darkness returned!")
                     battle.scene.disappearBar
                   }
+
+  Ozzy_Last = Proc.new{|battle|
+                    battle.scene.appearBar
+                    battle.scene.pbShowOpponent(0)
+                    pbMessage("This battle may be saved yet! Observe, \\PN!")
+                    battle.pbAnimation(getID(PBMoves,:SANDSTORM),battle.battlers[1],battle.battlers[0])
+                    battle.field.weather = PBWeather::Sandstorm
+                    battle.field.weatherDuration = 8
+                    pbMessage("The sandstorm resurged!")
+                    pbWait(8)
+                    if battle.battlers[0].pbOwnSide.ffects[PBEffects::StealthRock] == false
+                      battle.pbAnimation(getID(PBMoves,:STEALTHROCK),battle.battlers[1],battle.battlers[0])
+                      battle.battlers[0].pbOwnSide.effects[PBEffects::StealthRock] = true
+                      pbMessage("Ozzy set Stealth Rocks on \\PN's side!")
+                    end
+                    battle.scene.pbHideOpponent
+                    pbWait(16)
+                    battle.scene.disappearBar
+                  }
+  Ralph_Last = Proc.new{|battle|
+                    battle.scene.appearBar
+                    battle.scene.pbShowOpponent(0)
+                    pbMessage("May the sun rise on our victory!")
+                    battle.field.weather = PBWeather::Sun
+                    battle.field.weatherDuration = 8
+                    pbMessage("The sun returned!")
+                    pbWait(8)
+                    battle.pbAnimation(getID(PBMoves,:EMBER),battle.battlers[1],battle.battlers[0])
+                    battle.battlers[0].status = PBStatuses::BURN
+                    burnAllPokemon(nil)
+                    pbMessage("The sun left \\PN's team burned!")
+                    battle.scene.pbHideOpponent
+                    pbWait(16)
+                    battle.scene.disappearBar
+                  }
+    Marie_Start = Proc.new{|battle|
+                      battle.scene.appearBar
+                      battle.scene.pbShowOpponent(0)
+                      pbMessage("Be prepared for the terrible sound of defeat!")
+                      battle.field.weather = PBWeather::Reverb
+                      battle.field.weatherDuration = 8
+                      pbMessage("An echo chamber surrounds the field!")
+                      pbWait(8)
+                      if battle.battlers[0].pbOwnSide.effects[PBEffects::CometShards] == nil
+                        battle.pbAnimation(getID(PBMoves,:STEALTHROCK),battle.battlers[1],battle.battlers[0])
+                        battle.battlers[0].pbOwnSide.effects[PBEffects::CometShards] = true
+                        pbMessage("Marie set Comet Shards on \\PN's side!")
+                      end
+                      battle.scene.pbHideOpponent
+                      pbWait(16)
+                      battle.scene.disappearBar
+                    }
+    Marie_Low = Proc.new{|battle|
+                      battle.scene.appearBar
+                      battle.scene.pbShowOpponent(0)
+                      pbMessage("Don't think I've given up so soon!")
+                      battle.pbAnimation(getID(PBMoves,:RECOVER),battle.battlers[1],battle.battlers[1])
+                      battle.battlers[1].pbRecoverHP(battle.battlers[0].totalhp/3)
+                      pbMessage("Meritempo tried its hardest for Marie!")
+                      pbMessage("Meritempo recovered some HP!")
+                      pbWait(8)
+                      battle.battlers[1].pbRaiseStatStage(PBStats::DEFENSE,1,battle.battlers[1])
+                      battle.battlers[1].pbRaiseStatStage(PBStats::SPEED,1,battle.battlers[1])
+                      pbMessage("Meritempo's Defense and Speed rose!")
+                      pbWait(8)
+                      battle.scene.pbHideOpponent
+                      pbWait(16)
+                      battle.scene.disappearBar
+                    }
+
 
 # DONT DELETE THIS END
 end
