@@ -2364,6 +2364,7 @@ BattleHandlers::EORHealingAbility.add(:ASPIRANT,
 
 BattleHandlers::EORHealingAbility.add(:HOPEFULTOLL,
   proc { |ability,battler,battle|
+    battler.status = 0
     def pbAromatherapyHeal(pkmn,battler=nil)
       oldStatus = (battler) ? battler.status : pkmn.status
       curedName = (battler) ? battler.pbThis : pkmn.name
@@ -2382,7 +2383,7 @@ BattleHandlers::EORHealingAbility.add(:HOPEFULTOLL,
     end
     battle.pbParty(battler.index).each_with_index do |pkmn,i|
       next if !pkmn || !pkmn.able? || pkmn.status==PBStatuses::NONE
-      pbAromatherapyHeal(pkmn)
+      pkmn.status = 0
     end
     battle.pbHideAbilitySplash(battler)
   }
@@ -2603,7 +2604,7 @@ BattleHandlers::AbilityOnSwitchIn.add(:DARKAURA,
 BattleHandlers::AbilityOnSwitchIn.add(:GAIAFORCE,
   proc { |ability,battler,battle|
     battle.pbShowAbilitySplash(battler)
-    battle.pbDisplay(_INTL("{1} is radiating a dark aura!",battler.pbThis))
+    battle.pbDisplay(_INTL("{1} is gathering power from the earth!",battler.pbThis))
     battle.pbHideAbilitySplash(battler)
   }
 )
@@ -2678,6 +2679,14 @@ BattleHandlers::AbilityOnSwitchIn.add(:SHROUD,
     pbBattleWeatherAbility(PBWeather::Fog,battler,battle)
   }
 )
+
+BattleHandlers::AbilityOnSwitchIn.add(:BOREALIS,
+  proc { |ability,battler,battle|
+    next if battle.field.weather == PBWeather::Borealis
+    pbBattleWeatherAbility(PBWeather::Borealis,battler,battle)
+  }
+)
+
 
 BattleHandlers::AbilityOnSwitchIn.add(:HAILSTORM,
   proc { |ability,battler,battle|
