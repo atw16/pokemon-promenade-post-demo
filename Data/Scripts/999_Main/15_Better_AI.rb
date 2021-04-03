@@ -331,6 +331,7 @@ class PokeBattle_AI
     # Pokémon can't do anything (must have been in battle for at least 5 rounds)
     if !@battle.pbCanChooseAnyMove?(idxBattler) &&
        battler.turnCount && battler.turnCount>=0
+
       shouldSwitch = true
     end
     # Pokémon is Perish Songed and has Baton Pass
@@ -718,7 +719,10 @@ class PokeBattle_AI
 			end
 			# Pick a good move for the Choice items
 			if user.hasActiveItem?([:CHOICEBAND,:CHOICESPECS,:CHOICESCARF])
-				if move.baseDamage>=60;     score += 60
+				if user.effects[PBEffects::ChoiceBand]>=0 && move.id == user.effects[PBEffects::ChoiceBand]
+					score += 100
+					shouldSwitch = false if @battle.pbSideSize(battler.index)==1
+			  elsif move.baseDamage>=60;     score += 60
 				elsif move.damagingMove?;   score += 30
 				elsif move.function=="0F2"; score += 70   # Trick
 				else;                       score -= 60
