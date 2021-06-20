@@ -1,4 +1,4 @@
-[0]
+﻿[0]
 Filename = mapRegion0.png
 Name = Zharo Region
 Point = 21,17,Azgi Ruins,,2,18,14,

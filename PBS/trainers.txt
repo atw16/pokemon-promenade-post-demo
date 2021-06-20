@@ -278,7 +278,7 @@ Pokemon = FAIRICUDA,93
      IV = 31,0,31,31,31,31
      EV = 4,0,0,252,252,0
 Pokemon = PEGASOOT,92
-    Moves = CALMMIND,FLAMETHROWER,SCORCHINGSANDS,MOONBALL
+    Moves = CALMMIND,FLAMETHROWER,SCORCHINGSANDS,MOONBLAST
     Nature = TIMID
     Item = LIFEORB
     Ability = 2
@@ -324,7 +324,7 @@ LoseText = "What a whirlwind!"
 Pokemon = ORRUSTORM,70
     Moves = WEATHERBALL,THUNDERBOLT,ROOST,WINDDRILL
     Nature = TIMID
-    Item = FOCUSSASH
+    Item = CHARTIBERRY
     IV = 31,0,31,31,31,31
     EV = 0,0,0,252,252,0
 #-------------------------------
@@ -396,9 +396,9 @@ LoseText = "Amazing. Simply amazing!"
 Pokemon = FALKMUNRA,125
     Moves = RECOVER,FLAMETHROWER,QUANTUMWAVE,STARBEAM
     Nature = TIMID
-    Item = LIFEORB
+    Item = LEFTOVERS
     IV = 31,0,31,31,31,31
-    EV = 4,0,0,252,252,0
+    EV = 252,0,4,0,252,0
 #-------------------------------
 [CHANCELLOR,Eucal]
 LoseText = "HOW CAN THIS BE?!?!"
@@ -1227,7 +1227,7 @@ Pokemon = BELLOOM,37
   EV = 0,252,0,0,252,4
   Nature = JOLLY
   Item = LIFEORB
-  Moves = SEEDBOMB,FHYTHMICPUNCH,RHYTHMICRUSH,KNOCKOFF
+  Moves = SEEDBOMB,RHYTHMICPUNCH,RHYTHMICRUSH,KNOCKOFF
   Ability = 0
 Pokemon = EXPLOUD,37
   IV = 31,0,31,31,31,31
@@ -3181,4 +3181,20 @@ Pokemon = SAPHYRFLY,117
   Item = CHOICESCARF
   Ability = 2
   Moves = SIGNALBEAM,PALEOBEAM,STARBEAM,ICEBEAM
+#-------------------------------
+#Level Trainer
+#-------------------------------
+[SCIENTIST1,Nivel]
+Pokemon = AUDINO,15
+	Moves = MEMENTO
+Pokemon = AUDINO,15
+	Moves = MEMENTO
+Pokemon = AUDINO,15
+	Moves = MEMENTO
+Pokemon = AUDINO,15
+	Moves = MEMENTO
+Pokemon = AUDINO,15
+	Moves = MEMENTO
+Pokemon = AUDINO,15
+	Moves = MEMENTO
 #-------------------------------
